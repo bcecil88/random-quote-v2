@@ -5,43 +5,29 @@ var quotes = [
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
     {
         quote: '';
         source: '';
-        citation: '';
-        gender: '';
     }
 ];
