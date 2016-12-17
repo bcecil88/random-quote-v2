@@ -39,31 +39,40 @@ var quotes = [
     }
 ];
 
+// blank array to hold quote index
 var availableQuotes = [];
 
+// fill availableQuotes with all the quote indexes
 function getQuotes(quote,index){
     availableQuotes.push(index);
 }
 
+// run getQuotes function for every quote to increase availableQuotes array
 quotes.forEach(getQuotes);
 
+// picks a random quote object from the quotes array
 // returns the randomly selected quote object
 var getRandomQuote = function getRandomQuote() {
 
+    // when availableQuotes is empty start over selection process
     if (availableQuotes.length < 1){
         quotes.forEach(getQuotes);
     }
 
+    // pick a random number through array length
     var randomNumber = Math.floor(Math.random() * availableQuotes.length);
 
+    // get amount left from the availableQuotes array
     var quoteIndex = availableQuotes[randomNumber];
 
+    // lower number left from availableQuotes array as its used
     availableQuotes.splice(randomNumber, 1);
 
     return quotes[quoteIndex];
 
 };
 
+// put a random quote to the page
 var printQuote = function printQuote(quoteObject) {
 
     var newQuote;
@@ -82,6 +91,7 @@ var printQuote = function printQuote(quoteObject) {
 
 };
 
+// put a random rgb background color
 var changeBackgroundColor = function changeBackgroundColor() {
 
     var randomColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
@@ -91,12 +101,15 @@ var changeBackgroundColor = function changeBackgroundColor() {
     }
 };
 
+// interactivity event listener for mouse clicks on page
+// when button clicked loadquote
 document.getElementById('loadQuote').addEventListener("click",
     function() {
         printQuote(getRandomQuote());
         changeBackgroundColor();
     }, false);
 
+// change quote and color every ten seconds randomly
 setInterval(function () {
     printQuote(getRandomQuote());
     changeBackgroundColor();
